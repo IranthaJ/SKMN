@@ -57,12 +57,20 @@ namespace SKMN.Views
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            DateTime companyStartTime = DateTime.Now.Date.Add(new TimeSpan(8, 30, 0));
-            DateTime companyEndTime = DateTime.Now.Date.Add(new TimeSpan(17, 30, 0));
 
-            for()
-            reporter.Items.Add(new ReportRecord(85685,new DateTime(2016,6,14),new DateTime(2016,6,14,8,2,26),new DateTime(2016,6,14,17,36,45),new DateTime(2016,6,14,8,0,0),new DateTime(2016,6,14,17,0,0)));
-            reporter.Items.Add(new ReportRecord(85685, new DateTime(2016, 6, 14), new DateTime(2016, 6, 14, 7, 52, 26), new DateTime(2016, 6, 14, 17, 10, 45), new DateTime(2016, 6, 14, 8, 0, 0), new DateTime(2016, 6, 14, 17, 0, 0)));
+
+            foreach(DataRow row in recordsFromDB.Rows)
+            {
+                DateTime? recordDate = row[2] is DBNull ? null : (DateTime?)row[2];
+                DateTime companyStartTime = recordDate.Value.Add(new TimeSpan(8, 30, 0));
+                DateTime companyEndTime = recordDate.Value.Add(new TimeSpan(17, 30, 0));
+
+                DateTime? signin = row[3] is DBNull ? null : (DateTime?)row[3];
+                DateTime? signout = row[4] is DBNull ? null : (DateTime?)row[4];
+                reporter.Items.Add(new ReportRecord(Convert.ToInt32(row[1]), recordDate, signin, signout, companyStartTime, companyEndTime));
+            }
+            //reporter.Items.Add(new ReportRecord(85685,new DateTime(2016,6,14),new DateTime(2016,6,14,8,2,26),new DateTime(2016,6,14,17,36,45),new DateTime(2016,6,14,8,0,0),new DateTime(2016,6,14,17,0,0)));
+            //reporter.Items.Add(new ReportRecord(85685, new DateTime(2016, 6, 14), new DateTime(2016, 6, 14, 7, 52, 26), new DateTime(2016, 6, 14, 17, 10, 45), new DateTime(2016, 6, 14, 8, 0, 0), new DateTime(2016, 6, 14, 17, 0, 0)));
         }
     }
 }

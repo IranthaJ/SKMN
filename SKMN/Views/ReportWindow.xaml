@@ -1,7 +1,7 @@
 ﻿<Window x:Class="SKMN.Views.ReportWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        Title="   Report Viewer" Height="600" Width="900" Topmost="True" Loaded="Window_Loaded" Icon="/Resources/Reports.ico">
+        Title="   Report Viewer" Height="600" Width="920" Topmost="True" Loaded="Window_Loaded" Icon="/Resources/Reports.ico">
 
     <Grid>
         <Label Name="lbl_rpt_name" Content="Report" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="713" FontWeight="Bold" FontSize="20" Foreground="#FFFF6600"/>
@@ -14,16 +14,16 @@
         <ListView Margin="10,65,10,10" Name="reporter" BorderBrush="#FFF88A1F" FontSize="14" AlternationCount="1">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Employee No" Width="100" DisplayMemberBinding="{Binding EmployeeNumber}" />
-                    <GridViewColumn Header="Date" Width="100" DisplayMemberBinding="{Binding DisplayRecordDate}" />
+                    <GridViewColumn Header="Employee No" Width="90" DisplayMemberBinding="{Binding EmployeeNumber}" />
+                    <GridViewColumn Header="Date" Width="90" DisplayMemberBinding="{Binding DisplayRecordDate}" />
                     <GridViewColumn Header="In Time" Width="70" DisplayMemberBinding="{Binding DisplayInTime}" />
-                    <GridViewColumn Header="Late In" Width="70" DisplayMemberBinding="{Binding LateIn}" />
-                    <GridViewColumn Header="Early In" Width="70" DisplayMemberBinding="{Binding EarlyIn}" />
+                    <GridViewColumn Header="Late In" Width="65" DisplayMemberBinding="{Binding LateIn}" />
+                    <GridViewColumn Header="Early In" Width="65" DisplayMemberBinding="{Binding EarlyIn}" />
                     <GridViewColumn Header="Out Time" Width="70" DisplayMemberBinding="{Binding DisplayOutTime}" />
-                    <GridViewColumn Header="Early Out" Width="70" DisplayMemberBinding="{Binding EarlyOut}" />
-                    <GridViewColumn Header="Late Out" Width="70" DisplayMemberBinding="{Binding LateOut}" />
+                    <GridViewColumn Header="Early Out" Width="65" DisplayMemberBinding="{Binding EarlyOut}" />
+                    <GridViewColumn Header="Late Out" Width="65" DisplayMemberBinding="{Binding LateOut}" />
                     <GridViewColumn Header="Work Time" Width="80" DisplayMemberBinding="{Binding WorkTime}" />
-                    <GridViewColumn Header="Overtime" Width="90" DisplayMemberBinding="{Binding OverTime}" />
+                    <GridViewColumn Header="Overtime" Width="80" DisplayMemberBinding="{Binding OverTime}" />
                     <GridViewColumn Header="Status" Width="Auto" DisplayMemberBinding="{Binding Status}" />
                 </GridView>
             </ListView.View>
