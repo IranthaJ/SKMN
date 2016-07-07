@@ -1,0 +1,41 @@
+﻿<UserControl x:Class="SKMN.Views.Attendance_uc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+              d:DesignHeight="350" d:DesignWidth="700">
+    <Grid>
+        <GroupBox Header="Import data via TCP/IP" HorizontalAlignment="Left" Margin="37,174,0,0" VerticalAlignment="Top" Width="622" Height="166" FontSize="14" >
+            <Label Name="lbl_status" Content="Enter device IP address and connect" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="40,53,35,0" VerticalAlignment="Top" Width="593"/>
+        </GroupBox>
+
+        <GroupBox x:Name="file" Header="Import data from attendance file" HorizontalAlignment="Left" Margin="37,52,0,0" VerticalAlignment="Top" Width="622" Height="117" FontSize="14" />
+
+        <Label Content="Attendance Management" HorizontalAlignment="Center" HorizontalContentAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="265" FontWeight="Bold" FontSize="20" Foreground="#FFFF6600"/>
+        <TextBox Name="txt_file" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="389" Foreground="#FFF56809" BorderBrush="#FFF56809" Margin="88,83,0,0" FontWeight="Bold" />
+        <Button x:Name="btn_browse" HorizontalAlignment="Left" Height="28" Margin="482,81,0,0" VerticalAlignment="Top" Width="143" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2" Click="btn_browse_Click">
+            <StackPanel  Orientation="Horizontal" >
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Browse" FontSize="14" FontWeight="Bold" Foreground="#FFF88A1F"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_file_process"  HorizontalAlignment="Left" Height="35" Margin="273,122,0,0" VerticalAlignment="Top" Width="143" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2" Click="btn_file_process_Click">
+            <StackPanel  Orientation="Horizontal" >
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Process" FontSize="14" FontWeight="Bold" Foreground="#FFF88A1F"/>
+            </StackPanel>
+        </Button>
+
+        <TextBox Name="txt_ip" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="222" Foreground="#FFF56809" BorderBrush="#FFF56809" Margin="154,213,0,0" FontWeight="Bold" />
+        <Button x:Name="btn_connect" HorizontalAlignment="Left" Height="28" Margin="397,211,0,0" VerticalAlignment="Top" Width="143" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2">
+            <StackPanel  Orientation="Horizontal" >
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Connect" FontSize="14" FontWeight="Bold" Foreground="#FFF88A1F"/>
+            </StackPanel>
+        </Button>
+        <Button x:Name="btn_ip_process"  HorizontalAlignment="Left" Height="35" Margin="273,283,0,0" VerticalAlignment="Top" Width="143" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2">
+            <StackPanel  Orientation="Horizontal" >
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Process" FontSize="14" FontWeight="Bold" Foreground="#FFF88A1F"/>
+            </StackPanel>
+        </Button>
+
+    </Grid>
+</UserControl>

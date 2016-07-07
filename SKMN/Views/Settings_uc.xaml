@@ -1,0 +1,80 @@
+﻿<UserControl x:Class="SKMN.Views.Settings_uc"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="700">
+    
+    <UserControl.Resources>
+        <Style x:Key="alternatingListViewItemStyle" TargetType="{x:Type ListViewItem}">
+            <Style.Triggers>
+                <!-- setting up triggers for alternate background colors -->
+                <Trigger Property="ItemsControl.AlternationIndex" Value="1">
+                    <Setter Property="Background" Value="LightBlue"></Setter>
+                </Trigger>
+                <Trigger Property="ItemsControl.AlternationIndex" Value="2">
+                    <Setter Property="Background" Value="LightGray"></Setter>
+                </Trigger>
+            </Style.Triggers>
+            <!-- setting row height here -->
+            <Setter Property="Height" Value="20" />
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <Button Name="btn_backup"  Height="67"  VerticalAlignment="Top" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2" HorizontalAlignment="Right" Width="320" Margin="0,48,191,0" Click="btn_backup_Click" >
+            <StackPanel  Orientation="Horizontal" >
+                <Image Height="50" Width="50" Source="/Resources/backup.png" />
+                <StackPanel Orientation="Vertical" Width="201" VerticalAlignment="Center">
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Backup database" FontSize="18" FontWeight="Bold" Foreground="#FFF88A1F"/>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Save your data and keep it safe" FontStyle="Italic" FontSize="10"></TextBlock>
+                </StackPanel>
+
+            </StackPanel>
+
+        </Button>
+        <Label Content="System Settings" HorizontalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Top" Width="265" FontWeight="Bold" FontSize="20" Foreground="#FFFF6600"/>
+        <Label Content="Holidays" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.139,2.928" Margin="25,130,0,0" FontSize="14" FontWeight="Bold"/>
+        <ListView  AlternationCount="2" ItemContainerStyle="{StaticResource alternatingListViewItemStyle}" x:Name="holidayList" HorizontalAlignment="Left" Height="155" Margin="25,172,0,0" VerticalAlignment="Top" Width="648" BorderBrush="#FFF56809">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Holidate}" Header="Holiday date  "  Width="130" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Reason}" Header="Reason" Width="380" />
+                    <GridViewColumn DisplayMemberBinding="{Binding Path=Day}" Header="Day" Width="120" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <Button x:Name="btn_holiday" HorizontalAlignment="Left" Height="28" Margin="530,131,0,0" VerticalAlignment="Top" Width="143" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2" Click="btn_holiday_Click">
+            <StackPanel  Orientation="Horizontal" >
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Add Holiday" FontSize="14" FontWeight="Bold" Foreground="#FFF88A1F"/>
+            </StackPanel>
+        </Button>
+
+        <Grid x:Name="InputBox" Visibility="Collapsed">
+            <Grid Background="Black" Opacity="0.5"/>
+            <Border Width="350" Height="200"
+            Background="White" 
+            BorderBrush="#FFF88A1F" 
+            BorderThickness="2" 
+            HorizontalAlignment="Center" 
+            VerticalAlignment="Center" >
+                <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <StackPanel Orientation="Horizontal" Width="326">
+                        <Label Margin="50,10,10,0" Content="Date : " />
+                        <DatePicker Margin="20,10,10,0" x:Name="holidate" Width="149" />
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="10,0" Width="326">
+                        <Label Margin="50,10,10,0" Content="Reason :" />
+                        <TextBox Margin="8,10,10,0" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="InputTextBox"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Width="326">
+                        <Button x:Name="btn_holiday_add" Width="70" Margin="70,10,30,0" Content="Add" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2" Click="btn_holiday_add_Click"/>
+                        <Button x:Name="btn_holiday_cancel" Width="70" Margin="0,10,30,0" Content="Cancel" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2" Click="btn_holiday_cancel_Click" />
+                    </StackPanel>
+                </StackPanel>
+            </Border>
+        </Grid>
+
+    </Grid>
+</UserControl>

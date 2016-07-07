@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="SKMN.Views.Reports_ul"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+                          d:DesignHeight="350" d:DesignWidth="700">
+
+    <Grid>
+        <Label Content="Reports" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Margin="10,10,0,0" VerticalAlignment="Top" Width="265" FontWeight="Bold" FontSize="20" Foreground="#FFFF6600"/>
+        <Label Content="Daily reports" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.139,2.928" Margin="46,82,0,0" FontSize="14" FontWeight="Bold"/>
+        <DatePicker Name="dt_picker_daily" HorizontalAlignment="Left" Margin="222,85,0,0" VerticalAlignment="Top" Width="174"/>
+        <Button x:Name="btn_daily_report" HorizontalAlignment="Left" Height="28" Margin="438,83,0,0" VerticalAlignment="Top" Width="143" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2" Click="btn_daily_report_Click">
+            <StackPanel  Orientation="Horizontal" >
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Generate" FontSize="14" FontWeight="Bold" Foreground="#FFF88A1F"/>
+            </StackPanel>
+        </Button>
+
+        <Label Content="Monthly reports" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.139,2.928" Margin="46,152,0,0" FontSize="14" FontWeight="Bold"/>
+        <DatePicker  Name="dt_picker_monthly" HorizontalAlignment="Left" Margin="222,152,0,0" VerticalAlignment="Top" Width="174">
+            <DatePicker.Resources>
+                <Style TargetType="{x:Type DatePickerTextBox}">
+                    <Setter Property="Control.Template">
+                        <Setter.Value>
+                            <ControlTemplate>
+                                <TextBox x:Name="PART_TextBox" 
+                                    Text="{Binding Path=SelectedDate, RelativeSource={RelativeSource AncestorType={x:Type DatePicker}}, StringFormat={}{0:MMMM - yyyy}}" />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <Button x:Name="btn_montly_report" HorizontalAlignment="Left" Height="28" Margin="438,152,0,0" VerticalAlignment="Top" Width="143" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2" Click="btn_montly_report_Click">
+            <StackPanel  Orientation="Horizontal" >
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Generate" FontSize="14" FontWeight="Bold" Foreground="#FFF88A1F"/>
+            </StackPanel>
+        </Button>
+
+        <Label Content="Reports for date range" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.139,2.928" Margin="46,230,0,0" FontSize="14" FontWeight="Bold"/>
+        <DatePicker Name="dt_picker_range_from" HorizontalAlignment="Left" Margin="276,221,0,0" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btn_range_report" HorizontalAlignment="Left" Height="28" Margin="438,233,0,0" VerticalAlignment="Top" Width="143" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2" Click="btn_range_report_Click">
+            <StackPanel  Orientation="Horizontal" >
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Generate" FontSize="14" FontWeight="Bold" Foreground="#FFF88A1F"/>
+            </StackPanel>
+        </Button>
+        <DatePicker x:Name="dt_picker_range_to" HorizontalAlignment="Left" Margin="276,250,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label Content="From" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.139,2.928" Margin="222,218,0,0" FontSize="14" FontWeight="Bold"/>
+        <Label Content="To" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="1.139,2.928" Margin="222,247,0,0" FontSize="14" FontWeight="Bold"/>
+    </Grid>
+</UserControl>

@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="SKMN.Views.Home"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="700">
+
+    <Grid>
+        <Viewbox HorizontalAlignment="Left" Height="330" Margin="20,20,0,0" VerticalAlignment="Top" Width="330">
+            <Calendar BorderBrush="#FFF79825"/>
+        </Viewbox>
+        <Grid HorizontalAlignment="Right"  Margin="0,20,20,0" VerticalAlignment="Top" Height="330" Width="330">
+            <Button Name="btn_attendance"  Height="67" Margin="26,5,25,0" VerticalAlignment="Top" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2" >
+                <StackPanel  Orientation="Horizontal" >
+                    <Image Height="50" Width="50" Source="/Resources/attendance.png" />
+                    <StackPanel Orientation="Vertical" Width="201" VerticalAlignment="Center">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Attendance" FontSize="18" FontWeight="Bold" Foreground="#FFF88A1F"/>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Update system with your attendace data" FontStyle="Italic" FontSize="10"></TextBlock>
+                    </StackPanel>
+
+                </StackPanel>
+                
+            </Button>
+            
+            <Button Name="btn_report"  Height="67" Margin="26,123,25,0" VerticalAlignment="Top" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2">
+                <StackPanel  Orientation="Horizontal" >
+                    <Image Height="50" Width="50" Source="/Resources/Reports.png" />
+                    <StackPanel Orientation="Vertical" Width="201" VerticalAlignment="Center">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Reports" FontSize="18" FontWeight="Bold" Foreground="#FFF88A1F"/>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Analyse your records" FontStyle="Italic" FontSize="10"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+
+            <Button Name="btn_settings"  Height="67" Margin="26,237,25,0" VerticalAlignment="Top" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2">
+                <StackPanel  Orientation="Horizontal" >
+                    <Image Height="50" Width="50" Source="/Resources/settings.png" />
+                    <StackPanel Orientation="Vertical" Width="201" VerticalAlignment="Center">
+                        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Text="Settings" FontSize="18" FontWeight="Bold" Foreground="#FFF88A1F"/>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Text="Set up your system" FontStyle="Italic" FontSize="10"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+            </Button>
+
+
+        </Grid>
+
+    </Grid>
+</UserControl>
