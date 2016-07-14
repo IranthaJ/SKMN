@@ -8,7 +8,7 @@
 
     <Grid>
         <Viewbox HorizontalAlignment="Left" Height="330" Margin="20,20,0,0" VerticalAlignment="Top" Width="330">
-            <Calendar BorderBrush="#FFF79825"/>
+            <Calendar x:Name="myCalandar" BorderBrush="#FFF79825"/>
         </Viewbox>
         <Grid HorizontalAlignment="Right"  Margin="0,20,20,0" VerticalAlignment="Top" Height="330" Width="330">
             <Button Name="btn_attendance"  Height="67" Margin="26,5,25,0" VerticalAlignment="Top" Background="White" BorderBrush="#FFF88A1F" BorderThickness="2" >
